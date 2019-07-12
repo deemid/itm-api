@@ -1,0 +1,232 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "This is the API endpoints of intimate.io",
+    "version": "1.0.0",
+    "title": "Swagger intimate API",
+    "termsOfService": "http://swagger.io/terms/",
+    "contact": {
+      "email": "apiteam@swagger.io"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "petstore.swagger.io",
+  "basePath": "/v2",
+  "tags": [
+    {
+      "name": "companies",
+      "description": "Companies Endpoint"
+    }
+  ],
+  "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/": {
+      "post": {
+        "tags": [
+          "companies"
+        ],
+        "summary": "Add a new company",
+        "description": "",
+        "operationId": "create",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Company object to be stored",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CompanyCreate"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "companies"
+        ],
+        "summary": "Update company information",
+        "description": "Updates the company information",
+        "operationId": "update",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Company object to be stored",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CompanyUpdate"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "securityDefinitions": {
+    "petstore_auth": {
+      "type": "oauth2",
+      "authorizationUrl": "http://dev-api.intimate.online/oauth/authorize",
+      "flow": "implicit",
+      "scopes": {
+        "write:pets": "modify pets in your account",
+        "read:pets": "read your pets"
+      }
+    },
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_key",
+      "in": "header"
+    }
+  },
+  "definitions": {
+    "CompanyCreate": {
+      "type": "object",
+      "required": [
+        "companyName",
+        "email",
+        "name",
+        "roleId"
+      ],
+      "properties": {
+        "companyName": {
+          "type": "string",
+          "example": "intimate.io"
+        },
+        "email": {
+          "type": "string",
+          "example": "admin@intimate.io"
+        },
+        "name": {
+          "type": "string",
+          "example": "Allanaire Tapion"
+        },
+        "roleId": {
+          "type": "string",
+          "example": "ADMIN"
+        }
+      }
+    },
+    "CompanyUpdate": {
+      "type": "object",
+      "required": [
+        "name",
+        "photoUrls"
+      ],
+      "properties": {
+        "partnerName": {
+          "type": "string",
+          "example": "intimate.io"
+        },
+        "companyNameFull": {
+          "type": "string",
+          "example": "intimate.io"
+        },
+        "logoLarge": {
+          "type": "string",
+          "example": "Allanaire Tapion"
+        },
+        "description": {
+          "type": "string",
+          "example": "ADMIN"
+        },
+        "plugins": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "woocommerce",
+            "magento",
+            "shopify"
+          ]
+        },
+        "publicEmailAddress": {
+          "type": "string",
+          "example": "allanaire@intimate.io"
+        },
+        "website": {
+          "type": "string",
+          "example": "https://intimate.io"
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "retail",
+            "cams",
+            "bdsm"
+          ]
+        },
+        "targetAudience": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "straight",
+            "gay"
+          ]
+        },
+        "currencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "example": [
+            "ITM",
+            "ETH",
+            "BTC"
+          ]
+        }
+      }
+    },
+    "ApiResponse": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "type": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  }
+}

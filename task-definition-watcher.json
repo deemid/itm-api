@@ -1,0 +1,44 @@
+{
+  "family": "itm-watcher-definition",
+  "containerDefinitions": [
+    {
+        "name": "itm-watcher",
+        "image": "186577280460.dkr.ecr.ap-southeast-2.amazonaws.com/dev-itm-watcher:latest",
+        "cpu": 10,
+        "memory": 500,
+        "entryPoint": [
+            "node",
+            "transaction-erc20.js"
+        ],
+        "essential": true,
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "options": {
+              "awslogs-group": "awslogs-watcher",
+              "awslogs-region": "ap-southeast-2",
+              "awslogs-stream-prefix": "dev-watcher"
+          }
+        },
+        "environment" : [
+          { "name" : "MONGODB_URI", "value" : "mongodb+srv://intimate-user-api:iamsexyandiknowit@cluster0-bxnja.mongodb.net/test?retryWrites=true" },
+          { "name" : "LOCAL_MONGO_DB", "value" : "mongodb://localhost" },
+          { "name" : "INTIMATE_TOKEN_ADDRESS", "value" : "0x80f5B4D79FF60cDB9e7B7B66937877a22b70c77E" },
+          { "name" : "INFURA_TOKEN", "value" : "" },
+          { "name" : "ETHERSCAN_API_KEY", "value" : "GVYMEGXWKJ4GGGBFA243AVGITAJKTT6CZ3" },
+          { "name" : "COINMARKETCAP_API_KEY", "value" : "2b3734c9-eaea-427d-b82b-10211d7410d9" },
+          { "name" : "API_BASE_URL", "value" : "https://dev-api.intimate.partners" },
+          { "name" : "SMTP_HOST", "value": "smtp.mailtrap.io"},
+          { "name" : "SMTP_USER", "value": "17ee19a44cf80e"},
+          { "name" : "SMTP_PASSWORD", "value": "d4afbb2ff3cc6d"},  
+          { "name" : "CONTENTFUL_SPACE_ID", "value": "29p0okotfprj"},
+          { "name" : "CONTENTFUL_API", "value": "https://cdn.contentful.com"},
+          { "name" : "CONTENTFUL_ENVIRONMENT", "value": "master"},
+          { "name" : "CONTENTFUL_ACCESS_TOKEN", "value": "924dbfe18c87f61190eddd2cce0e9488d60126910cae08f1186487b88ffaff92"},
+          { "name" : "API_REQUEST_EMAIL_RECIPIENT", "value": "bret@intimate.io"},
+          { "name" : "PARTNER_PORTAL", "value": "https://dev.intimate.partners"},
+          { "name" : "INFURA_URL_HTTP", "value": "https://rinkeby.infura.io"},
+          { "name" : "INFURA_URL_WS", "value": "wss://rinkeby.infura.io/ws"}
+        ]
+    }
+  ]
+}

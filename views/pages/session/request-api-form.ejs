@@ -1,0 +1,40 @@
+<div class="notification is-warning" id="request-api-success" style="display: none; margin-top: 24px;">
+  <button class="delete" id="request-api-success-close" role="button"></button>
+  Request API Access Success
+</div>
+
+<div class="notification is-danger" id="request-api-error" style="display: none; margin-top: 24px;">
+    <button class="delete" id="request-api-error-close" role="button"></button>
+    <span id="request-api-error-message">Error Requesting API Access</span>
+  </div>
+
+<form class="mt20" id="form-request-api">
+
+  <div class="field w70">
+    <div class="control">
+      <input type="text" name="name" class="input" placeholder="Name" required  autocomplete="off"  />
+    </div>
+  </div>
+  
+  <div class="field w70">
+    <div class="control">
+      <input type="email" name="email" class="input" placeholder="Email Address" required autocomplete="off" />
+    </div>  
+  </div>
+
+  <div class="field w70">
+    <div class="control">
+      <input type="text" name="phoneNumber" class="input" placeholder="Phone Number (Inc. Country Code)" required  autocomplete="off"  />
+    </div>
+  </div>
+
+  <div class="field w70">
+    <div class="control">
+      <input type="password" name="password" class="input" placeholder="Password" required />
+    </div>
+  </div>
+
+  <div class="field w70">
+    <button class="button is-primary mt20 btn-submit" type="submit">Submit</button>
+  </div>
+</form>

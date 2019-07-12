@@ -1,0 +1,40 @@
+<% if(messages.error) { %>
+  <div class="notification is-danger" id="login-error" style="margin-top: 24px;">
+    <button class="delete" id="login-error-close" role="button"></button>
+    <%= messages.error %>
+  </div>
+<% } %>
+
+<form action="<%= url %>" method="post" class="form-login mt20">
+  <input type="hidden" name="grant_type" value="password">
+  <input type="hidden" name="client_id" value="<%= client_id %>">
+
+  <% if(grant_type === 'implicit') { %>
+    <input type="hidden" name="client_secret" value="<%= client_secret %>">
+  <% } %>
+  
+  <div class="field w70">
+    <div class="control">
+      <input type="email" name="username" class="input" placeholder="Email Address" required autocomplete="off" />
+    </div>  
+  </div>
+
+  <div class="field w70">
+    <div class="control">
+      <input type="password" name="password" class="input" placeholder="Password" required " />
+    </div>
+  </div>
+
+  <div class="field w70" style="display: flex; justify-content: space-between">
+    <div style="display: inline-block">
+      <input class="is-checkradio" id="exampleCheckbox" type="checkbox" name="exampleCheckbox">
+      <label for="exampleCheckbox">Remember me</label>
+    </div>
+
+    <a href="/forgot-password">Forgot Password?</a>
+  </div>
+
+  <div class="field w70">
+    <button class="button is-primary mt20 btn-submit" type="submit">Login</button>
+  </div>
+</form>

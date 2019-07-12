@@ -1,0 +1,21 @@
+{
+  "lastRun": "1552871101206-add-crypto.js",
+  "migrations": [
+    {
+      "title": "1550799704362-add-pre-erc20-identifiers.js",
+      "timestamp": 1553444622088
+    },
+    {
+      "title": "1550819532865-add-property-cryptoAmountInfo.js",
+      "timestamp": 1553444622153
+    },
+    {
+      "title": "1551322402117-add-permissions-to-roles.js",
+      "timestamp": 1553444622193
+    },
+    {
+      "title": "1552871101206-add-crypto.js",
+      "timestamp": 1553444622197
+    }
+  ]
+}

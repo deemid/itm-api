@@ -1,0 +1,44 @@
+<section class="section main-content">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="is-size-3 text-primary bolder">Login</h1>
+        <p id="login-description"><%= contents.loginDescription %></p>
+  
+        <%- include('./login-form.ejs') %>
+  
+      </div>
+      <div class="column">
+        <h1 class="is-size-3 text-primary bolder">Request API Access</h1>
+        <p id="request-api-description"><%= contents.requestApiFormDescription %></p>
+  
+        <%- include('./request-api-form.ejs') %>
+      </div>
+  
+    </div>
+  
+    <h1 class="is-size-3 text-primary bolder">Partners</h1>
+    <p><%= contents.partnersDescription %></p>
+  
+      <div class="partners-gallery">
+        <% partners.map((partner) => { %>
+          <figure>
+            <a href="<%= partner.destinationUrl %>" alt="<%= partner.partnerName %>" target="_blank">
+              <img src="<%= partner.logo %>" />
+            </a>
+          </figure>
+        <% }) %>
+  
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+        <div class="spacer"></div>
+      </div>
+  
+  </div>
+</section>
