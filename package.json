@@ -51,7 +51,7 @@
     "hdkey": "^1.1.0",
     "http-errors": "~1.6.2",
     "jade": "~1.11.0",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.11",
     "method-override": "^3.0.0",
     "module-alias": "^2.1.0",
